@@ -1,4 +1,4 @@
-\documentclass[DM,authoryear,toc]{lsstdoc}
+\documentclass[authoryear,toc]{lsstdoc}
 % lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
 \input{meta}
 
@@ -16,6 +16,8 @@
 % \setDocSubtitle{A subtitle}
 
 \author{%
+Steve Margheim, 
+Aprajita Verma,
 Phil Marshall
 }
 
@@ -36,9 +38,11 @@ We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk
 % Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
 % See LPM-51 for version number policy.
 \setDocChangeRecord{%
-  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{Phil Marshall}
+  \addtohist{0.1}{2022-03-18}{Initial draft.}{Steve Margheim}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -49,6 +53,40 @@ We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk
 
 % ADD CONTENT HERE
 % You can also use the \input command to include several content files.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Requirements} \label{sec:reqs}
+
+We first outline some use cases for a helpdesk system to support the ``users'' of the in-kind program, namely the contribution teams, program managers, and recipients -- as well as the In-kind Program Coordinator (IPC) respondents. 
+From these examples we derive a simple set of requirements for the system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Design} \label{sec:design}
+
+We now describe the design of the In-Kind Helpdesk system. 
+The helpdesk is implemented as a Jira project, with a dedicated email list connected to it.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Operation} \label{sec:operation}
+
+This section provides a set of how-to's, for reference by the IPCs on helpdesk duty.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Future Work} \label{sec:future}
+ 
+The In-kind Helpdesk is now in use by the IPCs and in-kind users. 
+In future, we could think of making the following improvements:
+
+\begin{itemize}
+\item \ldots
+\end{itemize}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix
 % Include all the relevant bib files.
@@ -62,9 +100,5 @@ We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk
 \input{acronyms.tex}
 % If you want glossary uncomment below -- comment out the two lines above
 %\printglossaries
-
-
-
-
 
 \end{document}
