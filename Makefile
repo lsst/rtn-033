@@ -32,7 +32,8 @@ endif
 
 # Do the Google docs download:
 $(DOCNAME).pdf:
-	apt install curl
+	apt-get update
+	apt-get -y install curl
 	curl -L "https://docs.google.com/document/d/18_4_-oH6Xv6x7bo6rtn5FkZYaisswMnP0Oa9GvHT9WA/export?format=pdf" -o $(DOCNAME).pdf
 
 
