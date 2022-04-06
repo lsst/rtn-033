@@ -30,8 +30,8 @@ endif
 # aglossary.tex :$(tex) myacronyms.txt
 # 	generateAcronyms.py  -g $(tex)
 
-# Do the Google docs download:
-$(DOCNAME).pdf:
+# Do the Google docs download. Note that we still need to make the meta.tex file, for LSSTthedocs to use:
+$(DOCNAME).pdf: meta.tex
 	apt-get update
 	apt-get -y install curl
 	curl -L "https://docs.google.com/document/d/18_4_-oH6Xv6x7bo6rtn5FkZYaisswMnP0Oa9GvHT9WA/export?format=pdf" -o $(DOCNAME).pdf
@@ -45,7 +45,6 @@ clean:
 
 .FORCE:
 
-# We probably still do want to update the meta.tex file, in case LSSTthedocs needs it.
 meta.tex: Makefile .FORCE
 	rm -f $@
 	touch $@
