@@ -14,6 +14,10 @@ We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk
 The system follows an initial design by the Rubin construction project Communications  (COMT) and IT teams. 
 This technote describes the system and its use.
 
+Status
+------
+This is a stub. Steve Margheim is working on the initial draft, follow the link to the commentable source Google doc below to see how the writing is going.
+
 Links
 =====
 
