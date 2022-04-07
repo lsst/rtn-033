@@ -34,7 +34,7 @@ endif
 $(DOCNAME).pdf: meta.tex
 	apt-get update
 	apt-get -y install curl
-	curl -L "https://docs.google.com/document/d/18_4_-oH6Xv6x7bo6rtn5FkZYaisswMnP0Oa9GvHT9WA/export?format=pdf" -o $(DOCNAME).pdf
+	curl -L "https://docs.google.com/document/d/1QTTl50l2FCMV1EvwvURCj5ui28eZTIW27EjO1etg4lM/export?format=pdf" -o $(DOCNAME).pdf
 
 
 .PHONY: clean
