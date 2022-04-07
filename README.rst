@@ -10,29 +10,21 @@ The In-Kind Helpdesk System
 RTN-033
 =======
 
-We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk system, with configuration and operating procedure designed for use by the Rubin LSST in-kind program contribution teams and recipients as they seek assistance from the In-kind Program Coordinators (IPC) in the Rubin operations IPC Team. The system follows an initial design by the Rubin construction project Communications  (COMT) and IT teams. This technote describes the system as its use.
+We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk system, with configuration and operating procedure designed for use by the Rubin LSST in-kind program contribution teams and recipients as they seek assistance from the In-kind Program Coordinators (IPC) in the Rubin operations IPC Team. 
+The system follows an initial design by the Rubin construction project Communications  (COMT) and IT teams. 
+This technote describes the system and its use.
 
 Links
 =====
 
+- Live, commentable source: `RTN-033 Google doc <https://docs.google.com/document/d/1QTTl50l2FCMV1EvwvURCj5ui28eZTIW27EjO1etg4lM/edit>`_
 - Live drafts: https://rtn-033.lsst.io
 - GitHub: https://github.com/lsst/rtn-033
 
 Build
 =====
 
-This repository includes lsst-texmf_ as a Git submodule.
-Clone this repository::
-
-    git clone --recurse-submodules https://github.com/lsst/rtn-033
-
-Compile the PDF::
-
-    make
-
-Clean built files::
-
-    make clean
+PDF is generated via a download from the Google doc source that is triggered by a pull request. 
 
 Updating acronyms
 -----------------
@@ -50,14 +42,4 @@ You can ensure that certain strings aren't treated as acronyms by adding them to
 The lsst-texmf_ repository centrally maintains definitions for LSST acronyms.
 You can also add new acronym definitions, or override the definitions of acronyms, by editing the `myacronyms.txt <./myacronyms.txt>`_ file.
 
-Updating lsst-texmf
--------------------
-
-`lsst-texmf`_ includes BibTeX files, the ``lsstdoc`` class file, and acronym definitions, among other essential tooling for LSST's LaTeX documentation projects.
-To update to a newer version of `lsst-texmf`_, you can update the submodule in this repository::
-
-   git submodule update --init --recursive
-
-Commit, then push, the updated submodule.
-
-.. _lsst-texmf: https://github.com/lsst/lsst-texmf
+Needed acronyms then need to be added manually to the Google doc source.
