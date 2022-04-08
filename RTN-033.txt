@@ -1,0 +1,168 @@
+﻿The In-kind Helpdesk System | RTN-033 | Latest Revision Date 2022-04-11 C:\Users\robm\Pictures\Colorized RGB - use over white-trimmed.png 
+The In-kind Helpdesk System
+
+
+Steve Margheim, Phil Marshall, Aprajita Verma, 
+RTN-033
+Latest Revision Date: April 11, 2022
+
+
+  
+
+Change Record 
+Release
+	Date
+	Description
+	Owner Name
+	0.9
+	2022-04-11
+	Initial draft
+	Steve Margheim
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+Table of Contents
+Change Record        i
+Summary        iv
+Definitions of Terms        iv
+Reference Documents        iv
+Other Preamble as Needed        iv
+1        Section Heading in SOURCE SANS PRO font 14pt Bold (use Heading 1 Style)        1
+1.1        Subsection Heading (use Heading 2 Style)        2
+1.2        Sub-subsection Heading (use Heading 3 Style)        2
+1.2.1        Etc. (use Heading 4 Style)        2
+2        Section 2 Heading        2
+3        Etc.        2
+
+
+
+
+The In-kind Helpdesk System
+Summary
+We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk system, with configuration and operating procedure designed for use by the Rubin LSST in-kind program contribution teams and recipients as they seek assistance from the In-kind Program Coordinators (IPC) in the Rubin operations IPC Team. The system follows an initial design by the Rubin construction project Communications  (COMT) and IT teams.  This technote describes the system and its use.
+
+
+Definitions of Terms 
+Word being defined in bold – Definition text; no period necessary at the end of the text block unless the definition is more than one sentence long.
+Reference Documents 
+“Title of Document” (Document-XXXXX)
+“Title of Document 2” (LPM-XXX)
+Other Preamble as Needed
+The text style is SOURCE SANS PRO 12pt with 1.5 line spacing and 6pt paragraph spacing before and after. Left align the paragraphs. Use no first line indent. Page margins are 1.5 inches at the top and 1 inch on the sides and at the bottom.
+Document Title
+1. Introduction
+This document is a technical guide to the use of the In-kind Helpdesk System by the IPC team members. It covers the handling of new submitted tickets, the handling of assigned tickets, and the review of resolved tickets. 
+An essential role in In-kind Helpdesk (IKH) support is the IPC member on support duty.  This role’s primary responsibilities are to monitor new tickets submitted to the helpdesk, assign tickets to the most appropriate IPC member, and provide any first-order response to general queries. This role is also responsible for rejecting and spam/inappropriate tickets. This role also serves as the reviewer for most resolved helpdesk tickets. 
+The IPC member currently assigned this role can be found at the Rubin LSST In-kind Program Helpdesk Support Duty Sheet.
+
+
+
+
+   1. Subsection Heading (use Heading 2 Style)
+   2. Sub-subsection Heading (use Heading 3 Style)
+      1. Etc. (use Heading 4 Style)
+2. Section 2 Heading
+The text style is SOURCE SANS PRO 12pt with 1.5 line spacing and 12pt paragraph spacing before and after. Left align the paragraphs. Use no first line indent. Page margins are 1.5 inches at the top and 1 inch on the sides and at the bottom.
+Table Example follows:
+Table 1: Tables are inserted in line with text and “Autofit to Window”. Table labels are created by right click/Insert Caption/Table. Table labels appear above the table, using the Caption pre-set style
+Column Heading
+	Column Heading
+	Column Heading
+	Column Heading
+	Data
+	Data
+	Data
+	Data
+	Data
+	Data
+	Data
+	Data
+	Data
+	Data
+	Data
+	Data
+	3. Etc. 
+The text style is SOURCE SANS PRO 12pt with 1.5 line spacing and 12pt paragraph spacing before and after. Left align the paragraphs. Use no first line indent. Page margins are 1.5 inches at the top and 1 inch on the sides and at the bottom.
+Figure Example follows:
+  
+
+Figure 1: Figures/charts/graphs in image formats are inserted “In Line with Text” from the Picture Tools/Format/Wrap Text menu and centered. Figure captions are created by right-click/Insert Caption/Figure. Captions appear below the figure, using the Caption pre-set style.
