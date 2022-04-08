@@ -59,4 +59,5 @@ $(DOCNAME).txt:
 	apt-get -y install curl
 	curl -L "https://docs.google.com/document/d/1QTTl50l2FCMV1EvwvURCj5ui28eZTIW27EjO1etg4lM/export?format=txt" -o $@
 	git add $@
-	git commit -am 'Plain text downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)' $@
+	git commit -m 'Plain text downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)' $@
+	git push
