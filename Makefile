@@ -64,5 +64,5 @@ $(DOCNAME).txt:
 	git config --local user.email github-actions@github.com
 	git config --local user.name github-actions
 	git add $@
-	git commit -m 'Plain text downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)' $@
+	git commit -m 'Plain text back-up downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)' $@
 	git push
