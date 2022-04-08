@@ -30,12 +30,12 @@ endif
 # aglossary.tex :$(tex) myacronyms.txt
 # 	generateAcronyms.py  -g $(tex)
 
-# Do the Google docs download. Note that we still need to make the meta.tex file, for LSSTthedocs to use:
-$(DOCNAME).pdf: meta.tex
-	apt-get update
-	apt-get -y install curl
-	curl -L "https://docs.google.com/document/d/1QTTl50l2FCMV1EvwvURCj5ui28eZTIW27EjO1etg4lM/export?format=pdf" -o $(DOCNAME).pdf
 
+# Do the Google docs download. Note that we still need to make the meta.tex file, for LSSTthedocs to use.
+# We also want a plain text version, for back-up - so we get this first (below), then grab the PDF:
+
+$(DOCNAME).pdf: meta.tex $(DOCNAME).txt
+	curl -L "https://docs.google.com/document/d/1QTTl50l2FCMV1EvwvURCj5ui28eZTIW27EjO1etg4lM/export?format=pdf" -o $@
 
 .PHONY: clean
 clean:
@@ -53,3 +53,10 @@ meta.tex: Makefile .FORCE
 	printf '\\newcommand{\\lsstDocNum}{$(DOCNUMBER)}\n' >>$@
 	printf '\\newcommand{\\vcsRevision}{$(GITVERSION)$(GITDIRTY)}\n' >>$@
 	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
+
+$(DOCNAME).txt:
+	apt-get update
+	apt-get -y install curl
+	curl -L "https://docs.google.com/document/d/1QTTl50l2FCMV1EvwvURCj5ui28eZTIW27EjO1etg4lM/export?format=txt" -o $@
+	git add $@
+	git commit -am 'Plain text downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)' $@
