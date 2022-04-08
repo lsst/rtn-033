@@ -54,10 +54,15 @@ meta.tex: Makefile .FORCE
 	printf '\\newcommand{\\vcsRevision}{$(GITVERSION)$(GITDIRTY)}\n' >>$@
 	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
 
+# Here's where we download, as back-up in case the Google doc gets lost in future, a plain text copy of the Gdoc content, and check it in to the repo.
+# Note that GitHub wants to know who is making the commit - the git config lines get the name and email address of the previous committer (i.e. the commit that triggered the action). See the discussion at https://github.community/t/how-does-one-commit-from-an-action/16127/9
+
 $(DOCNAME).txt:
 	apt-get update
 	apt-get -y install curl
 	curl -L "https://docs.google.com/document/d/1QTTl50l2FCMV1EvwvURCj5ui28eZTIW27EjO1etg4lM/export?format=txt" -o $@
+	git config --local user.email "$(git log --format='%ae' HEAD^!)"
+	git config --local user.name "$(git log --format='%an' HEAD^!)"
 	git add $@
 	git commit -m 'Plain text downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)' $@
 	git push
