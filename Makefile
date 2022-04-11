@@ -41,20 +41,6 @@ $(DOCNAME).pdf: meta.tex backup
 	apt-get -y install curl
 	curl -L "$(GOOGURL)/export?format=pdf" -o $@
 
-# Here's where we download, as back-up in case the Google doc gets lost in future, a plain text copy of the Gdoc content, and check it in to the repo.
-# Note that GitHub wants to know who is making the commit. See the discussion at https://github.community/t/how-does-one-commit-from-an-action/16127/9
-
-backup:
-	apt-get update
-	apt-get -y install curl
-	curl -L "$(GOOGURL)/export?format=txt" -o $(DOCNAME).txt
-	curl -L "$(GOOGURL)/export?format=html" | sed s%"<"%"\n<"%g > $(DOCNAME).html
-	git config --local user.email github-actions@github.com
-	git config --local user.name github-actions
-	git add $(DOCNAME).txt $(DOCNAME).html
-	git commit -am 'Back-up txt and html downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)'
-	git push
-
 
 .PHONY: clean
 clean:
@@ -72,3 +58,17 @@ meta.tex: Makefile .FORCE
 	printf '\\newcommand{\\lsstDocNum}{$(DOCNUMBER)}\n' >>$@
 	printf '\\newcommand{\\vcsRevision}{$(GITVERSION)$(GITDIRTY)}\n' >>$@
 	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
+
+# Here's where we download, as back-up in case the Google doc gets lost in future, copies of the Gdoc content in both plain text and html formats, and check them in to the repo.
+# Note that GitHub wants to know who is making the commit. See the discussion at https://github.community/t/how-does-one-commit-from-an-action/16127/9
+
+backup:
+	apt-get update
+	apt-get -y install curl
+	curl -L "$(GOOGURL)/export?format=txt" -o $(DOCNAME).txt
+	curl -L "$(GOOGURL)/export?format=html" | sed s%"<"%"\n<"%g > $(DOCNAME).html
+	git config --local user.email github-actions@github.com
+	git config --local user.name github-actions
+	git add $(DOCNAME).txt $(DOCNAME).html
+	git commit -am 'Back-up txt and html downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)'
+	git push
