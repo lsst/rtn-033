@@ -35,6 +35,8 @@ endif
 # We also want a plain text version, for back-up - so we get this first (below), then grab the PDF:
 
 $(DOCNAME).pdf: meta.tex $(DOCNAME).txt
+	apt-get update
+	apt-get -y install curl
 	curl -L "https://docs.google.com/document/d/1QTTl50l2FCMV1EvwvURCj5ui28eZTIW27EjO1etg4lM/export?format=pdf" -o $@
 
 .PHONY: clean
