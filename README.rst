@@ -12,6 +12,8 @@ RTN-033
 
 We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk system, with configuration and operating procedure designed for use by the Rubin LSST in-kind program contribution teams and recipients as they seek assistance from the In-kind Program Coordinators (IPC) in the Rubin operations IPC Team. The system follows an initial design by the Rubin construction project Communications  (COMT) and IT teams. This technote describes the system as its use.
 
+_This branch, which contains the initial stub of the technote in LaTeX format, is preserved in case we want to move back quickly from Google docs source to LaTeX._
+
 Links
 =====
 
