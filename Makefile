@@ -12,7 +12,10 @@ GITSTATUS := $(shell git status --porcelain)
 ifneq "$(GITSTATUS)" ""
 	GITDIRTY = -dirty
 endif
-GITBRANCH := $(shell git status | head -1 | cut -d" " -f3)
+
+# Pushing from GitHub actions onlty works if we are not in a detached HEAD state (eg in the push action, not the pull one). 
+# Check whether we are actually on a branch - value is "branch" if on a branch, otherwise "detached":
+GITBRANCH := $(shell git status | head -1 | cut -d" " -f2)
 
 # export TEXMFHOME ?= lsst-texmf/texmf
 
@@ -68,8 +71,10 @@ backup:
 	apt-get -y install curl
 	curl -L "$(GOOGURL)/export?format=txt" -o $(DOCNAME).txt
 	curl -L "$(GOOGURL)/export?format=html" | sed s%"<"%"\n<"%g > $(DOCNAME).html
-	git config --local user.email github-actions@github.com
-	git config --local user.name github-actions
-	git add $(DOCNAME).txt $(DOCNAME).html
-	git commit -am 'Back-up txt and html downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)'
-	git push origin HEAD:$(GITBRANCH)
+	ifeq ($(GITBRANCH), "branch")
+        	git config --local user.email github-actions@github.com
+		git config --local user.name github-actions
+		git add $(DOCNAME).txt $(DOCNAME).html
+		git commit -am 'Back-up txt and html downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)'
+		git push
+	fi
