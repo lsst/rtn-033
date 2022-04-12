@@ -101,19 +101,18 @@ Release
 	
 
 Table of Contents
-Change Record        i
-Summary        iv
-Definitions of Terms        iv
-Reference Documents        iv
-Other Preamble as Needed        iv
-1        Section Heading in SOURCE SANS PRO font 14pt Bold (use Heading 1 Style)        1
-1.1        Subsection Heading (use Heading 2 Style)        2
-1.2        Sub-subsection Heading (use Heading 3 Style)        2
-1.2.1        Etc. (use Heading 4 Style)        2
-2        Section 2 Heading        2
-3        Etc.        2
-
-
+Change Record        1
+Summary        3
+Definitions of Terms        3
+Reference Documents        3
+Other Preamble as Needed        3
+Introduction        1
+New Tickets        1
+Subsection Heading (use Heading 2 Style)        2
+Sub-subsection Heading (use Heading 3 Style)        2
+Etc. (use Heading 4 Style)        2
+Section 2 Heading        2
+Etc.        2
 
 
 The In-kind Helpdesk System
@@ -133,6 +132,47 @@ Document Title
 This document is a technical guide to the use of the In-kind Helpdesk System by the IPC team members. It covers the handling of new submitted tickets, the handling of assigned tickets, and the review of resolved tickets. 
 An essential role in In-kind Helpdesk (IKH) support is the IPC member on support duty.  This role’s primary responsibilities are to monitor new tickets submitted to the helpdesk, assign tickets to the most appropriate IPC member, and provide any first-order response to general queries. This role is also responsible for rejecting and spam/inappropriate tickets. This role also serves as the reviewer for most resolved helpdesk tickets. 
 The IPC member currently assigned this role can be found at the Rubin LSST In-kind Program Helpdesk Support Duty Sheet.
+2        New Tickets
+2.1 Submission
+This section covers the submission of tickets into the system, and the initial handling of the tickets by the IPC member on IKH support duty.  
+
+
+2.1.1 Email Submission
+The primary route for submission of a ticket to the IKH is by email to JIKH@lsst.org. This email is processed by the Jarvis Autoticketed which creates a new ticket with issue number IKH-##, where ## is a sequentially increasing number.  The subject of the email becomes the title of the ticket, and the body of the email becomes the Description field of the new ticket. The Reporter of the ticket is the Jarvis Autoticker, which is also added as a Watcher to the ticket.
+The created ticket has no Assignee.
+The created ticket is of type Task
+The created ticket has Priority set to Undefined
+The created ticket has no Component 
+The created ticket has no Labels
+The Created ticket has Status OPEN
+2.1.2 Creation by IPC member
+IPC members can also create new tickets via the Create Issue feature of the JIRA system. The status of the ticket will then depend on the information entered into the system by the IPC member.  That member will be the Reporter of the ticket. 
+IPC members can also send an email to JIKH@lsst.org to create a new ticket.  This ticket will be identical to that described above under Email Submission except the Reporter will be the IPC member, as long as the email was sent from the email account linked to the IPC member’s JIRA account. 
+2.2        Initial IKH Support for New Tickets
+The IPC member on IKH support duty is responsible for monitoring incoming tickets, performing any necessary first interactions with the submitters, and assigning those tickets to the appropriate IPC member. How each ticket is handled will depend on the type of communication initiated. The different types refer to the Use Cases in the IPC Communications plan. 
+2.2.1 Formal Submission 
+1. Set the Component to "Director's Office"
+2. Set the Label to the Program ID. 
+3. Assign the ticket to the Program IPC
+2.2.2 Contribution Query
+1. Set Component to "Director's Office"
+2. If the ticket contains the Contribution ID.
+   1. Set the Label to the Contribution ID
+   2. Assign the ticket to the Contribution IPC.
+3. If the ticket does not contain the Contribution ID, but appears to be from a current contribution, we need to respond to the submitter and request this information.  
+   1. Select the "Email" button.
+   2. Copy the submitter's email address from the ticket Description to the Recipient (To): box.
+   3. Select the "Email Options" button at the top. Ensure that "Reply to Me"  box is selected.
+   4. In the Body, Make your request. 
+   5.    We have received your request for support to the In-kind Program Helpdesk.  In order to route your query to the most appropriate level of support, we ask that you please let us know the Contribution ID associated with your in-kind contribution.  
+   6. Select "Send". 
+   7. The response to this email will be sent to the email associated with your Rubin JIRA account.  When you have completed that dialog, forward the email to JIHK@lsst.org and the Jarvis Autoticker will add it to the ticket
+   8. Set the Label to the Contribution ID
+   9. Assign the ticket to the Contribution IPC.
+  
+
+
+
 
 
 
