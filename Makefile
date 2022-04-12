@@ -71,7 +71,7 @@ backup:
 	apt-get -y install curl
 	curl -L "$(GOOGURL)/export?format=txt" -o $(DOCNAME).txt
 	curl -L "$(GOOGURL)/export?format=html" | sed s%"<"%"\n<"%g > $(DOCNAME).html
-	ifeq ($(GITBRANCH), "branch")
+	ifeq ($(GITBRANCH), branch)
 		git config --local user.email github-actions@github.com
 		git config --local user.name github-actions
 		git add $(DOCNAME).txt $(DOCNAME).html
