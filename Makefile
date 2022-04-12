@@ -12,6 +12,7 @@ GITSTATUS := $(shell git status --porcelain)
 ifneq "$(GITSTATUS)" ""
 	GITDIRTY = -dirty
 endif
+GITBRANCH := $(shell git status | head -1 | cut -d" " -f3)
 
 # export TEXMFHOME ?= lsst-texmf/texmf
 
@@ -72,4 +73,4 @@ backup:
 	git add $(DOCNAME).txt $(DOCNAME).html
 	git commit -am 'Back-up txt and html downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)'
 	git log -1 --date=short
-	git push
+	git push origin HEAD:$(GITBRANCH)
