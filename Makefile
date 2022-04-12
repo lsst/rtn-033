@@ -2,7 +2,7 @@ DOCTYPE = RTN
 DOCNUMBER = 033
 DOCNAME = $(DOCTYPE)-$(DOCNUMBER)
 
-# This Makefile does not do anything with latex or tex files - instead, it downloads a PDF from Google docs. 
+# This Makefile does not do anything with latex or tex files - instead, it downloads a PDF from Google docs.
 
 # tex = $(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
@@ -13,7 +13,7 @@ ifneq "$(GITSTATUS)" ""
 	GITDIRTY = -dirty
 endif
 
-# Pushing from GitHub actions onlty works if we are not in a detached HEAD state (eg in the push action, not the pull one). 
+# Pushing from GitHub actions onlty works if we are not in a detached HEAD state (eg in the push action, not the pull one).
 # Check whether we are actually on a branch - value is "branch" if on a branch, otherwise "detached":
 GITBRANCH := $(shell git status | head -1 | cut -d" " -f2)
 
@@ -71,10 +71,10 @@ backup:
 	apt-get -y install curl
 	curl -L "$(GOOGURL)/export?format=txt" -o $(DOCNAME).txt
 	curl -L "$(GOOGURL)/export?format=html" | sed s%"<"%"\n<"%g > $(DOCNAME).html
-	ifeq ($(GITBRANCH), branch)
-		git config --local user.email github-actions@github.com
-		git config --local user.name github-actions
-		git add $(DOCNAME).txt $(DOCNAME).html
-		git commit -am 'Back-up txt and html downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)'
-		git push
+	if  [ $(GITBRANCH) = "branch" ]; then\
+		git config --local user.email github-actions@github.com;\
+		git config --local user.name github-actions;\
+		git add $(DOCNAME).txt $(DOCNAME).html;\
+		git commit -am 'Back-up txt and html downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)';\
+		git push;\
 	fi
