@@ -71,4 +71,5 @@ backup:
 	git config --local user.name github-actions
 	git add $(DOCNAME).txt $(DOCNAME).html
 	git commit -am 'Back-up txt and html downloaded on $(GITDATE) for Revision $(GITVERSION)$(GITDIRTY)'
+	git log -1 --date=short
 	git push
