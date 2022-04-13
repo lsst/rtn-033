@@ -107,12 +107,18 @@ Definitions of Terms        3
 Reference Documents        3
 Other Preamble as Needed        3
 Introduction        1
-New Tickets        1
-Subsection Heading (use Heading 2 Style)        2
-Sub-subsection Heading (use Heading 3 Style)        2
-Etc. (use Heading 4 Style)        2
-Section 2 Heading        2
-Etc.        2
+2 New Tickets        1
+2.1 Submission        1
+2.1.1 Email Submission        2
+2.1.2 Creation by IPC member        2
+2.2 Initial IKH Support for New Tickets        3
+2.2.1 Formal Submission        3
+2.2.2 Contribution Query        3
+Subsection Heading (use Heading 2 Style)        5
+Sub-subsection Heading (use Heading 3 Style)        5
+Etc. (use Heading 4 Style)        5
+Section 2 Heading        5
+Etc.        5
 
 
 The In-kind Helpdesk System
