@@ -16,7 +16,8 @@ This technote describes the system and its use.
 
 Status
 ------
-This is a stub. Steve Margheim is working on the initial draft, follow the link to the commentable source Google doc below to see how the writing is going.
+Updated Sections 3 and 4. Section 2 on the techinical details is still TBD
+
 
 Links
 =====
