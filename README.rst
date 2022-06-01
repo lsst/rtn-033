@@ -16,7 +16,7 @@ This technote describes the system and its use.
 
 Status
 ------
-Updated Sections 3 and 4. Section 2 on the techinical details is still TBD
+Updated Sections 3 and 4. Section 2 on the techinical details is still TBD.  
 
 
 Links
