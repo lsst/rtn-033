@@ -1,10 +1,10 @@
-﻿The In-kind Helpdesk System | RTN-033 | Latest Revision Date 2022-04-11 C:\Users\robm\Pictures\Colorized RGB - use over white-trimmed.png 
+﻿The In-kind Helpdesk System | RTN-033 | Latest Revision Date 2022-05-24 C:\Users\robm\Pictures\Colorized RGB - use over white-trimmed.png 
 The In-kind Helpdesk System
 
 
 Steve Margheim, Phil Marshall, Aprajita Verma, 
 RTN-033
-Latest Revision Date: April 11, 2022
+Latest Revision Date: May 24, 2022
 
 
   
@@ -18,14 +18,10 @@ Release
 	2022-04-11
 	Initial draft
 	Steve Margheim
-	
-
-	
-
-	
-
-	
-
+	1.0
+	2022-05-24
+	Sections 3 and 4 completed
+	Steve Margheim
 	
 
 	
@@ -102,25 +98,26 @@ Release
 
 Table of Contents
 Change Record        1
-Summary        3
-Definitions of Terms        3
-Reference Documents        3
-Other Preamble as Needed        3
+Summary        4
+Definitions of Terms        4
+Reference Documents        4
+Other Preamble as Needed        4
 Introduction        1
-2 New Tickets        1
-2.1 Submission        1
-2.1.1 Email Submission        2
-2.1.2 Creation by IPC member        2
-2.2 Initial IKH Support for New Tickets        3
-2.2.1 Formal Submission        3
-2.2.2 Contribution Query        3
-Subsection Heading (use Heading 2 Style)        5
-Sub-subsection Heading (use Heading 3 Style)        5
-Etc. (use Heading 4 Style)        5
-Section 2 Heading        5
-Etc.        5
-
-
+2  System Design Overview        1
+3 New Tickets        1
+3.1 Submission        1
+3.1.1 Email Submission        2
+3.1.2 Creation by IPC member        2
+3.2 Initial IKH Support for New Tickets        3
+3.2.1 Formal Submission        3
+3.2.2 Contribution Query        3
+3.2.3  Program Query        5
+3.2.4  General Query        6
+3.2.5 Spam Ticket        6
+4 Assigned Tickets        9
+4.1 Initial Steps        9
+4.2 To start a conversation with the submitter        9
+4.3 Resolving a Ticket        10
 The In-kind Helpdesk System
 Summary
 We use Jira and the Jarvis auto-ticketer to implement an outward-facing Helpdesk system, with configuration and operating procedure designed for use by the Rubin LSST in-kind program contribution teams and recipients as they seek assistance from the In-kind Program Coordinators (IPC) in the Rubin operations IPC Team. The system follows an initial design by the Rubin construction project Communications  (COMT) and IT teams.  This technote describes the system and its use.
@@ -138,12 +135,14 @@ Document Title
 This document is a technical guide to the use of the In-kind Helpdesk System by the IPC team members. It covers the handling of new submitted tickets, the handling of assigned tickets, and the review of resolved tickets. 
 An essential role in In-kind Helpdesk (IKH) support is the IPC member on support duty.  This role’s primary responsibilities are to monitor new tickets submitted to the helpdesk, assign tickets to the most appropriate IPC member, and provide any first-order response to general queries. This role is also responsible for rejecting and spam/inappropriate tickets. This role also serves as the reviewer for most resolved helpdesk tickets. 
 The IPC member currently assigned this role can be found at the Rubin LSST In-kind Program Helpdesk Support Duty Sheet.
-2        New Tickets
-2.1 Submission
+2         System Design Overview
+TBC[a]
+3        New Tickets
+3.1 Submission
 This section covers the submission of tickets into the system, and the initial handling of the tickets by the IPC member on IKH support duty.  
 
 
-2.1.1 Email Submission
+3.1.1 Email Submission
 The primary route for submission of a ticket to the IKH is by email to JIKH@lsst.org. This email is processed by the Jarvis Autoticketed which creates a new ticket with issue number IKH-##, where ## is a sequentially increasing number.  The subject of the email becomes the title of the ticket, and the body of the email becomes the Description field of the new ticket. The Reporter of the ticket is the Jarvis Autoticker, which is also added as a Watcher to the ticket.
 The created ticket has no Assignee.
 The created ticket is of type Task
@@ -151,16 +150,16 @@ The created ticket has Priority set to Undefined
 The created ticket has no Component 
 The created ticket has no Labels
 The Created ticket has Status OPEN
-2.1.2 Creation by IPC member
+3.1.2 Creation by IPC member
 IPC members can also create new tickets via the Create Issue feature of the JIRA system. The status of the ticket will then depend on the information entered into the system by the IPC member.  That member will be the Reporter of the ticket. 
 IPC members can also send an email to JIKH@lsst.org to create a new ticket.  This ticket will be identical to that described above under Email Submission except the Reporter will be the IPC member, as long as the email was sent from the email account linked to the IPC member’s JIRA account. 
-2.2        Initial IKH Support for New Tickets
+3.2        Initial IKH Support for New Tickets
 The IPC member on IKH support duty is responsible for monitoring incoming tickets, performing any necessary first interactions with the submitters, and assigning those tickets to the appropriate IPC member. How each ticket is handled will depend on the type of communication initiated. The different types refer to the Use Cases in the IPC Communications plan. 
-2.2.1 Formal Submission 
+3.2.1 Formal Submission 
 1. Set the Component to "Director's Office"
 2. Set the Label to the Program ID. 
 3. Assign the ticket to the Program IPC
-2.2.2 Contribution Query
+3.2.2 Contribution Query
 1. Set Component to "Director's Office"
 2. If the ticket contains the Contribution ID.
    1. Set the Label to the Contribution ID
@@ -168,7 +167,7 @@ The IPC member on IKH support duty is responsible for monitoring incoming ticket
 3. If the ticket does not contain the Contribution ID, but appears to be from a current contribution, we need to respond to the submitter and request this information.  
    1. Select the "Email" button.
    2. Copy the submitter's email address from the ticket Description to the Recipient (To): box.
-   3. Select the "Email Options" button at the top. Ensure that "Reply to Me"  box is selected.
+   3. Select the "Email Options" button at the top. Ensure that the "Reply to Me"  box is selected.
    4. In the Body, Make your request. 
    5.    We have received your request for support to the In-kind Program Helpdesk.  In order to route your query to the most appropriate level of support, we ask that you please let us know the Contribution ID associated with your in-kind contribution.  
    6. Select "Send". 
@@ -177,38 +176,76 @@ The IPC member on IKH support duty is responsible for monitoring incoming ticket
    9. Assign the ticket to the Contribution IPC.
   
 
+Figure 1: Screenshot of the main portion of a help desk ticket showing the locations of the Component, Labels, and Assignee sections. The black circle shows the location of the “Email” button.
+3.2.3         Program Query
+4. Set Component to "Director's Office"
+5. If the ticket contains the Program ID.
+   1. Set the Label to the Program ID
+   2. Assign the ticket to the Program  IPC.
+6. If the ticket does not contain the Program  ID, but appears to be from a current contribution, we need to respond to the submitter and request this information.  
+   1. Select the "Email" button.
+   2. Copy the submitter's email address from the ticket Description to the Recipient (To): box.
+   3. Select the "Email Options" button at the top. Ensure that the "Reply to Me"  box is selected.
+   4. In the Body, Make your request. 
+   5.    We have received your request for support to the In-kind Program Helpdesk.  In order to route your query to the most appropriate level of support, we ask that you please let us know the Program ID associated with your in-kind contribution.  
+   6. Select "Send". 
+   7. The response to this email will be sent to the email associated with your Rubin JIRA account.  When you have completed that dialog, forward the email to JIHK@lsst.org and the Jarvis Autoticker will add it to the ticket
+   8. Set the Label to the Program ID
+   9. Assign the ticket to the Program IPC.
+3.2.4         General Query
+1. Set the Component to "Director's Office"
+2. If you are able to respond to the query directly, assign the ticket to yourself.
+3. If you are unable to respond to the query, assign the ticket to the most appropriate IPC member
+3.2.5        Spam Ticket 
+1. Assign the ticket to yourself (so the ticket does not show as unassigned).
+2. Set Label to Spam
+3. Select "Start Progress"
+4. Select “Rejected under Resolution in the pop-up window
+5. Select "Stop Progress" 
+6. The ticket will now have the status of "Canceled".
+________________
 
 
 
 
-
-
-   1. Subsection Heading (use Heading 2 Style)
-   2. Sub-subsection Heading (use Heading 3 Style)
-      1. Etc. (use Heading 4 Style)
-2. Section 2 Heading
-The text style is SOURCE SANS PRO 12pt with 1.5 line spacing and 12pt paragraph spacing before and after. Left align the paragraphs. Use no first line indent. Page margins are 1.5 inches at the top and 1 inch on the sides and at the bottom.
-Table Example follows:
-Table 1: Tables are inserted in line with text and “Autofit to Window”. Table labels are created by right click/Insert Caption/Table. Table labels appear above the table, using the Caption pre-set style
-Column Heading
-	Column Heading
-	Column Heading
-	Column Heading
-	Data
-	Data
-	Data
-	Data
-	Data
-	Data
-	Data
-	Data
-	Data
-	Data
-	Data
-	Data
-	3. Etc. 
-The text style is SOURCE SANS PRO 12pt with 1.5 line spacing and 12pt paragraph spacing before and after. Left align the paragraphs. Use no first line indent. Page margins are 1.5 inches at the top and 1 inch on the sides and at the bottom.
-Figure Example follows:
   
 
-Figure 1: Figures/charts/graphs in image formats are inserted “In Line with Text” from the Picture Tools/Format/Wrap Text menu and centered. Figure captions are created by right-click/Insert Caption/Figure. Captions appear below the figure, using the Caption pre-set style.
+Figure 2: Screenshot of the Email screen showing where the submitters (To:) email address, and the email message should be entered.  The location of the Email Options button and where to add comments from the ticket are highlighted.
+  
+
+Figure 3: Screenshot of the email options section. Ensure the “Reply to me” button is selected. If you want to add the outgoing email as a comment to the issue, change the option under “Set comment visibility”
+
+
+4        Assigned Tickets
+This section details the handling of tickets which have been assigned to a particular IPC member.
+4.1        Initial Steps
+1.  If you have been assigned a in-kind helpdesk ticket, ensure the following items are complete in the ticket
+   1. The Component is set to "Director's Office"
+   2. The Label is set to the Program or Component ID, as appropriate, if dealing with an existing program or contribution.
+2. Select the "Start Progress" button to move the status of the ticket from Open to In Progress.
+3. If the ticket title is vague or overly descriptive, edit the title to something more appropriate to ease later searches.  Make sure to retain the original title in a comment if it contains useful information.
+4.2 To start a conversation with the submitter
+1. Select the "Email" button.
+2. Copy the submitter's email address from the ticket Description to the Recipient (To): box.
+3. Select "Email Options" button at top. Ensure the "Reply to Me" box is selected. 
+4. In the Body, Initiate your conversation to the submitter.
+5. If necessary, you can add additional people to the cc: field of the email. 
+6. Select "Send".
+
+
+When you wish to archive your email conversation to the helpdesk ticket, Forward the email(s) to JIKH@lsst.org.  The Jarvis autoticker will attach the email to the ticket. This assumes that the email chain contains the original email sent with "Email this issue", even if deep in a reply chain. 
+4.3 Resolving a Ticket
+Most tickets will not require outside review.  If you wish to have another IPC or Rubin member review the resolution of the ticket, create a comment requesting the review along with tagging the IPC member.  
+When ready to resolve and close the ticket
+1. Select “Ready For Review” on the ticket
+2. Select “Approve”
+3. Select “Done”
+4. On the pop-up window, enter the details of the ticket resolution.  If the main details are already captured elsewhere in the ticket, just enter a quick summary. 
+5. Select “Done”.
+
+
+
+
+
+
+[a]Describe how the system is set up within JIRA to serve as helpdesk
